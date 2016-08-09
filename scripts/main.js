@@ -163,6 +163,7 @@ $(document).ready(function () {
             } else {
                 document.title = 'ILE DO KOŃCA?';
                 showWeekend();
+                return;
             }
         }
 
