@@ -139,6 +139,7 @@ $(document).ready(function () {
 
         if (checkIsWeekend(_this.now.getDay())) {
             showWeekend();
+            document.title = 'ILE DO KOŃCA?';
             return;
         } else {
             showWeekdays();
@@ -146,6 +147,7 @@ $(document).ready(function () {
 
         if (_this.now.getHours() < 9) {
             showNotYet();
+            document.title = 'ILE DO KOŃCA?';
             return;
         }
 
@@ -155,15 +157,23 @@ $(document).ready(function () {
 
         if (_this.now > _this.timeEnd) {
             if (_this.toEnd < 3600 * 2) {
+                document.title = 'DO DOMU! ILE DO KOŃCA?';
                 showGoHome();
+                return;
             } else {
+                document.title = 'ILE DO KOŃCA?';
                 showWeekend();
             }
-        } /*else {
-            showElements(false, false, false, false, false, true);
-        }*/
+        }
 
         _this.clock.html(_this.toEnd.toString().toHHMMSS());
+        var splitTime = _this.toEnd.toString().toHHMMSS().split(':');
+        splitTime[0] = parseInt(splitTime[0]);
+        splitTime[1] = parseInt(splitTime[1]);
+        splitTime[2] = parseInt(splitTime[2]);
+        var pageTitle = splitTime[0] > 0 ? splitTime[0] + 'h ' + splitTime[1] + 'min' : splitTime[1] + 'min ' + splitTime[2] + 's';
+
+        document.title = '(' + pageTitle + ') ILE DO KOŃCA?';
     }
 
 
