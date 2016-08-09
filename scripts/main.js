@@ -130,24 +130,18 @@ $(document).ready(function () {
         var _this = this;
         _this.clock = $('.timeLeft');
         _this.now = new Date();
-        _this.versions = {
-            weekend: $('#weekend'),
-            weekdays: $('#weekdays'),
-            toHome: $('#toHome'),
-            notYet: $('#notYet')
-        };
 
         if (checkIsWeekend(_this.now.getDay())) {
-            showWeekend();
             document.title = 'ILE DO KOŃCA?';
+            showWeekend();
             return;
         } else {
             showWeekdays();
         }
 
         if (_this.now.getHours() < 9) {
-            showNotYet();
             document.title = 'ILE DO KOŃCA?';
+            showNotYet();
             return;
         }
 
