@@ -1,0 +1,257 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto+Mono:700&subset=latin,latin-ext);
+@import "bourbon/bourbon";
+@import "fontawesome/font-awesome";
+@import "animatecss";
+
+$fontSize: 20px;
+
+@mixin fontSize($_size) {
+  font-size: em($_size, $fontSize);
+}
+
+@mixin nganimation($_time) {
+  -webkit-animation-duration: $_time;
+  animation-duration: $_time;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@mixin effect($_effect) {
+  -webkit-animation-name: $_effect;
+  animation-name: $_effect;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  @include transition(opacity 500ms ease);
+  font-family: 'Oswald', sans-serif;
+  font-size: $fontSize;
+
+  &.ready {
+    opacity: 1 !important;
+  }
+}
+
+.centeredContainer {
+  height: 100%;
+  min-height: 100%;
+  white-space: nowrap;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  .centered {
+    @include position(relative);
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    white-space: normal;
+    margin-left: -5px;
+  }
+}
+
+#ui {
+  @include position(fixed, 0 0 null 0);
+  width: 100%;
+  color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+
+  .ustawienia {
+    @include position(absolute, 10px 10px null null);
+    @include fontSize(14);
+
+    i {
+      cursor: pointer;
+      padding-left: 8px;
+      font-size: em(26, 14);
+
+      &:hover {
+        + span {
+          opacity: 1;
+
+        }
+      }
+    }
+    span {
+      @include position(absolute, 0 100% 0 null);
+      @include transition(all 500ms ease);
+      opacity: 0;
+      display: inline-block;
+    }
+
+    &:hover {
+
+    }
+  }
+}
+
+#wrapper, #settings, #welcome {
+  text-align: center;
+}
+
+#settings {
+  @include transition(all 500ms ease);
+  @include nganimation(500ms);
+  @include position(fixed, 0 0 0 0);
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1;
+
+  &.ng-hide-add {
+    @include effect(fadeOut);
+  }
+
+  &.ng-hide-remove {
+    @include effect(fadeIn);
+  }
+
+  form {
+    margin: auto;
+    display: block;
+
+    h3 {
+      padding-bottom: 1em;
+    }
+
+    input {
+      &[type='text'] {
+        @include border-style(solid);
+        @include border-width(2px);
+        @include fontSize(30);
+        width: 3em;
+        font-family: 'Oswald', sans-serif;
+
+      }
+    }
+
+    .btn {
+      &.btn-submit {
+        @include fontSize(30);
+        @include border-style(solid);
+        @include border-width(2px);
+        @include border-color(#000);
+        background-color: #fff;
+        font-family: 'Oswald', sans-serif;
+        margin-top: 2em;
+
+      }
+    }
+
+    .option {
+      @include transform(translateX(-85px));
+      width: 1px;
+      white-space: nowrap;
+      margin: auto;
+
+      input {
+        display: none;
+
+        + label {
+          @include position(relative);
+          @include fontSize(40);
+          padding-left: 1.5em;
+
+          &:before {
+            @include position(absolute, 0 null 0 0);
+            @include border-style(solid);
+            @include border-width(2px);
+            content: '';
+            margin: auto;
+            width: .6em;
+            height: .6em;
+          }
+
+          i {
+            @include fontSize(12);
+            @include position(absolute, 0 null 0 0);
+            width: 1.2em;
+            height: 1.2em;
+            text-align: center;
+            line-height: 2.5em;
+            opacity: 0;
+          }
+        }
+
+        &:checked {
+          + label {
+            i {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+    }
+
+    .other {
+      span {
+        @include position(relative);
+
+        &.line {
+          @include fontSize(50);
+          margin-left: 5px;
+
+        }
+
+        .fromTo {
+          text-align: center;
+
+          + label {
+            @include transition(all 500ms ease);
+            @include fontSize(30);
+            @include position(absolute, 0 null null 0);
+            width: 3em;
+            line-height: 0.7em;
+          }
+
+          &:focus, &.filled {
+            + label {
+              @include transform(scale(.5) translate3d(-2em, -.7em, 0));
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+h1 {
+  @include fontSize(200);
+  font-family: 'Roboto Mono';
+  font-weight: 700;
+  margin: 0;
+  padding: .3em 0 0;
+  line-height: .75em;
+  letter-spacing: -.05em;
+}
+
+h2 {
+  @include fontSize(132);
+  font-weight: 400;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+h3 {
+  @include fontSize(67);
+  font-weight: 400;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+
+}
