@@ -38,6 +38,10 @@ body {
   }
 }
 
+article, footer, aside, nav, nav ul, nav li {
+  display: block;
+}
+
 .centeredContainer {
   height: 100%;
   min-height: 100%;
@@ -98,14 +102,34 @@ body {
 
 #wrapper, #settings, #welcome {
   text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper {
+  #mainFooter {
+    @include fontSize(30);
+    @include position(fixed, null 0 0 0);
+    text-align: right;
+    padding: 0 10px 0;
+
+    a {
+      @include transition(opacity 200ms ease);
+      color: #000;
+      opacity: .3;
+
+      &:hover {
+        @include transition(opacity 500ms ease);
+        opacity: .8;
+      }
+    }
+  }
 }
 
 #settings {
   @include transition(all 500ms ease);
   @include nganimation(500ms);
   @include position(fixed, 0 0 0 0);
-  width: 100%;
-  height: 100%;
   background-color: #fff;
   z-index: 1;
 

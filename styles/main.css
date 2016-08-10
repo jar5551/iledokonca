@@ -4415,6 +4415,9 @@ body {
   body.ready {
     opacity: 1 !important; }
 
+article, footer, aside, nav, nav ul, nav li {
+  display: block; }
+
 .centeredContainer {
   height: 100%;
   min-height: 100%;
@@ -4464,7 +4467,29 @@ body {
       display: inline-block; }
 
 #wrapper, #settings, #welcome {
-  text-align: center; }
+  text-align: center;
+  width: 100%;
+  height: 100%; }
+
+#wrapper #mainFooter {
+  font-size: 1.5em;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: right;
+  padding: 0 10px 0; }
+  #wrapper #mainFooter a {
+    -webkit-transition: opacity 200ms ease;
+    -moz-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+    color: #000;
+    opacity: .3; }
+    #wrapper #mainFooter a:hover {
+      -webkit-transition: opacity 500ms ease;
+      -moz-transition: opacity 500ms ease;
+      transition: opacity 500ms ease;
+      opacity: .8; }
 
 #settings {
   -webkit-transition: all 500ms ease;
@@ -4479,8 +4504,6 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   background-color: #fff;
   z-index: 1; }
   #settings.ng-hide-add {
