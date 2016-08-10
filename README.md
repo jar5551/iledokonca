@@ -1,3 +1,6 @@
-**PRAWDOPODOBNIE NAJBARDZIEJ PRZYDATNY ZEGAR ŚWIATA**
+# PRAWDOPODOBNIE NAJBARDZIEJ PRZYDATNY ZEGAR ŚWIATA
+#### Skrojony do Twoich potrzeb, skuteczny, pokazujący dokładnie TO co Cię INTERESUJE! 
 
-Odwieczne pytanie ludzkości - kiedy koniec pracy? Tutaj jest odpowiedź!
+Jest coś lepszego na świecie? Śmiemy twierdzić, **że nie**.
+
+Aby zobaczyć to **dzieło** w akcji wejdź tutaj -> [ilejeszcze.loho.pl](https://ilejeszcze.loho.pl)
