@@ -4604,7 +4604,7 @@ h1 {
   letter-spacing: -.05em; }
 
 h2 {
-  font-size: 6.6em;
+  font-size: 8.55em;
   font-weight: 400;
   line-height: 1em;
   margin: 0;
@@ -4612,7 +4612,15 @@ h2 {
   text-transform: uppercase; }
 
 h3 {
-  font-size: 3.35em;
+  font-size: 3.3em;
+  font-weight: 400;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase; }
+
+h4 {
+  font-size: 2.4em;
   font-weight: 400;
   line-height: 1em;
   margin: 0;
