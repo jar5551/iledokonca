@@ -3,4 +3,4 @@
 
 Jest coś lepszego na świecie? Śmiemy twierdzić, **że nie**.
 
-Aby zobaczyć to **dzieło** w akcji wejdź tutaj -> [ilejeszcze.loho.pl](https://ilejeszcze.loho.pl)
+Aby zobaczyć to **dzieło** w akcji wejdź tutaj -> [ledokonca.loho.pl](http://iledokonca.loho.pl/)
